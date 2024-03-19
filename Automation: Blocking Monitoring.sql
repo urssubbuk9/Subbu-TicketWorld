@@ -1,3 +1,38 @@
+USE [master]
+GO
+
+/****** Object:  Table [dbo].[Monitor_Blocking]    Script Date: 24-05-2023 18:32:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Monitor_Blocking](
+	[CollectionDate] [datetime] NOT NULL,
+	[Blocker] [varchar](16) NOT NULL,
+	[Query] [nvarchar](max) NULL,
+	[spid] [smallint] NOT NULL,
+	[blocked] [smallint] NOT NULL,
+	[Waittype] [nchar](32) NULL,
+	[waittime] [bigint] NOT NULL,
+	[waitresource] [nchar](256) NOT NULL,
+	[dbid] [smallint] NOT NULL,
+	[cpu] [int] NOT NULL,
+	[physical_io] [bigint] NOT NULL,
+	[login_time] [datetime] NOT NULL,
+	[last_batch] [datetime] NOT NULL,
+	[open_tran] [smallint] NOT NULL,
+	[status] [nchar](30) NOT NULL,
+	[hostname] [nchar](128) NOT NULL,
+	[program_name] [nchar](128) NOT NULL,
+	[hostprocess] [nchar](10) NOT NULL,
+	[loginame] [nchar](128) NOT NULL,
+	[Procedure] [nvarchar](max) NULL,
+	[LastWaittype] [nchar](32) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
 USE [msdb]
 GO
 
